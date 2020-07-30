@@ -10,30 +10,10 @@
 <ion-content>
     <ion-slides>
         <ion-slide>
-            <ion-card class="anuncio" color="tertiary">
-                <ion-img src="../../assets/img/republica1.jpg"></ion-img>
-                <ion-card-header>
-                    <ion-card-subtitle>Avenida dos Sonhos Quebrados, nº 219</ion-card-subtitle>
-                    <ion-card-title>Vila das Flores - Cidade Maravilha</ion-card-title>
-                </ion-card-header>
-                <ion-card-content>
-                    4 quartos, 12 beliches, área de serviço ampla, salão de jogos,
-                    bem localizada próxima à estação de metro.
-                </ion-card-content>
-            </ion-card>
+            <app-card-ad [republica]="republicas[0]"></app-card-ad>
         </ion-slide>
         <ion-slide>
-            <ion-card class="anuncio" color="tertiary">
-                <ion-img src="../../assets/img/republica5.jpg"></ion-img>
-                <ion-card-header>
-                    <ion-card-subtitle>Baía Inglesa, nº 084</ion-card-subtitle>
-                    <ion-card-title>Formigas - Santada de Bocaiúvas</ion-card-title>
-                </ion-card-header>
-                <ion-card-content>
-                    5 quartos, 4 beliches, confortável, acessível, localizado
-                    proximo a estação de trem, ambiente comum aconchegante.
-                </ion-card-content>
-            </ion-card>
+            <app-card-ad [republica]="republicas[1]"></app-card-ad>
         </ion-slide>
     </ion-slides>
 </ion-content>

@@ -8,6 +8,8 @@ import { FavoritasPageRoutingModule } from './favoritas-routing.module';
 
 import { FavoritasPage } from './favoritas.page';
 
+import { CardAdComponent } from '../components/card-ad/card-ad.component';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -15,6 +17,6 @@ import { FavoritasPage } from './favoritas.page';
     IonicModule,
     FavoritasPageRoutingModule
   ],
-  declarations: [FavoritasPage]
+  declarations: [FavoritasPage, CardAdComponent]
 })
 export class FavoritasPageModule {}
