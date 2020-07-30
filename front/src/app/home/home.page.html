@@ -1,0 +1,37 @@
+<ion-header>
+    <ion-toolbar color="secondary">
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Início</ion-title>
+        <ion-buttons slot="end">
+            <ion-button routerLink="/login">
+                <ion-icon name="log-in-outline"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+    <ion-toolbar>
+        <ion-searchbar placeholder="Procurar repúblicas"></ion-searchbar>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-slides>
+        <ion-slide *ngFor="let republica of republicas">
+            <app-card-ad [republica]="republica"></app-card-ad>
+        </ion-slide>
+    </ion-slides>
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button>
+            <ion-icon name="list"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-list side="top">
+            <ion-fab-button routerLink="/favoritas">
+                <ion-icon name="bookmark"></ion-icon>
+            </ion-fab-button>
+            <ion-fab-button routerLink="/cadastro-republica">
+                <ion-icon name="add"></ion-icon>
+            </ion-fab-button>
+        </ion-fab-list>
+    </ion-fab>
+</ion-content>

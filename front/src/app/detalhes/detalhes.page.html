@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+      <ion-buttons slot="start">
+          <ion-back-button defaultHref="/home"></ion-back-button>
+      </ion-buttons>
+    <ion-title>Detalhes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <ion-img [src]="republica.img"></ion-img>
+            </ion-col>
+        </ion-row>
+        <ion-row class="ion-justify-content-between">
+            <ion-col>
+                <h5>{{republica.bairro + ' - ' + republica.cidade}}</h5>
+            </ion-col>
+            <ion-col size="auto">
+                <ion-chip (click)="chipCurtir()" color="primary">
+                    <ion-icon name="heart-outline"></ion-icon>
+                    <ion-label>{{republica.likes}}</ion-label>
+                    <ion-ripple-effect></ion-ripple-effect>
+                </ion-chip>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <h6>{{republica.endereco}}</h6>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col class="ion-text-center">
+                <p>Quartos</p>
+                <p>{{republica.quartos}}</p>
+            </ion-col>
+            <ion-col class="ion-text-center">
+                <p>Camas</p>
+                <p>{{republica.camas}}</p>
+            </ion-col>
+            <ion-col class="ion-text-center">
+                <p>Vagas</p>
+                <p>{{republica.vagas}}</p>
+            </ion-col>
+        </ion-row>
+        <ion-row class="ion-justify-content-around">
+            <ion-col size="auto">
+                <h3>{{'$' + republica.preco.toFixed(2)}}</h3>
+            </ion-col>
+            <ion-col size="auto">
+                <ion-button (click)="confirmarSalvo()" color="tertiary" size="large">
+                    Salvar
+                    <ion-ripple-effect></ion-ripple-effect>
+                </ion-button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

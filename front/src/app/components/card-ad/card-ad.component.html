@@ -1,0 +1,8 @@
+<ion-card class="anuncio" color="tertiary" [routerLink]="['/detalhes', republica.id]">
+    <ion-img [src]=republica.img></ion-img>
+    <ion-card-header>
+        <ion-card-subtitle>{{republica.endereco}}</ion-card-subtitle>
+        <ion-card-title>{{republica.bairro + ' - ' + republica.cidade}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>{{republica.descricao}}</ion-card-content>
+</ion-card>

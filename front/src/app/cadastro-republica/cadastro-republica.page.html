@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Cadastrar república</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="registerRepForm" (ngSubmit)="submitForm(registerRepForm)">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Endereço</ion-label>
+            <ion-input type="text" formControlName="address"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Cidade</ion-label>
+            <ion-input type="text" formControlName="city"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Bairro</ion-label>
+            <ion-input type="email" formControlName="district"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Preço</ion-label>
+            <ion-input type="number" formControlName="price"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-justify-content-center">
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Quartos</ion-label>
+            <ion-input type="number" formControlName="rooms"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Camas</ion-label>
+            <ion-input type="number" formControlName="beds"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Vagas</ion-label>
+            <ion-input type="number" formControlName="vacancies"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Observações</ion-label>
+            <ion-textarea formControlName="obs"></ion-textarea>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="auto">
+          <ion-button type="submit" color="primary" shape="round" [disabled]="registerRepForm.invalid">
+            <ion-text color="light">Cadastrar</ion-text>
+            <ion-ripple-effect></ion-ripple-effect>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>
