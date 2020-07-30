@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Republica } from '../republica';
+import { SearchService } from '../services/search.service';
 
 @Component({
   selector: 'app-home',
@@ -9,8 +10,9 @@ import { Republica } from '../republica';
 
 export class HomePage implements OnInit {
   republicas: Republica[];
+  public allRepublics = [];
 
-  constructor() { }
+  constructor(public seachService: SearchService) { }
 
   ngOnInit() {
     this.republicas = [
@@ -80,6 +82,17 @@ export class HomePage implements OnInit {
         descricao: '5 quartos, 4 beliches, confortável, acessível, localizado proximo a estação de trem, ambiente comum aconchegante.',
       },
     ];
+    this.allRepublicsGet();
   }
 
+  allRepublicsGet() {
+    this.seachService.getRepublics().subscribe((res) => {
+      this.allRepublics = res;
+      let i = 0;
+      for (let r of res) {
+        this.republicas[i].endereco = r.address;
+        i++;
+      }
+    });
+  }
 }
