@@ -19,11 +19,10 @@
                 <h5>{{republica.bairro + ' - ' + republica.cidade}}</h5>
             </ion-col>
             <ion-col size="auto">
-                <ion-chip (click)="chipCurtir()" color="primary">
-                    <ion-icon name="heart-outline"></ion-icon>
-                    <ion-label>{{republica.likes}}</ion-label>
-                    <ion-ripple-effect></ion-ripple-effect>
-                </ion-chip>
+                <app-chip-likes
+                    [likes]="republica.likes"
+                    (chipClicado)="handleChip($event)">
+                </app-chip-likes>
             </ion-col>
         </ion-row>
         <ion-row>
