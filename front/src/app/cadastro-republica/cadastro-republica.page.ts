@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Plugins, CameraResultType, CameraSource } from '@capacitor/core';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-cadastro-republica',
@@ -8,8 +10,9 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class CadastroRepublicaPage implements OnInit {
   registerRepForm: FormGroup;
-  
-  constructor(public formBuilder: FormBuilder) {
+  photo: SafeResourceUrl;
+  constructor(public formBuilder: FormBuilder,
+              private sanitizer: DomSanitizer) {
     this.registerRepForm = this.formBuilder.group({
       address: [null, [Validators.required]],
       district: [null, [Validators.required]],
@@ -19,10 +22,23 @@ export class CadastroRepublicaPage implements OnInit {
       vacancies: [null, [Validators.required]],
       price: [null, [Validators.required]],
       obs: [null],
+      photo: [null],
     });
    }
 
   ngOnInit() {
+  }
+
+  async takePicture() {
+    const image = await Plugins.Camera.getPhoto({
+      quality: 100,
+      allowEditing: true,
+      saveToGallery: true,
+      resultType: CameraResultType.DataUrl,
+      source: CameraSource.Camera,
+    });
+
+    this.photo = this.sanitizer.bypassSecurityTrustResourceUrl(image && (image.dataUrl));
   }
 
   submitForm(form) {
