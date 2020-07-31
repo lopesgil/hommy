@@ -15,6 +15,9 @@ export class RepublicService{
       {
         id: 0,
         img: '../../assets/img/republica1.jpg',
+        endereco: res[0].address,
+        cidade: res[0].city,
+        bairro: res[0].district,
         quartos: 4,
         camas: 24,
         vagas: 14,
@@ -25,6 +28,9 @@ export class RepublicService{
       {
         id: 1,
         img: '../../assets/img/republica2.jpg',
+        endereco: res[1].address,
+        cidade: res[1].city,
+        bairro: res[1].district,
         quartos: 10,
         camas: 20,
         vagas: 2,
@@ -35,6 +41,9 @@ export class RepublicService{
       {
         id: 2,
         img: '../../assets/img/republica3.jpg',
+        endereco: res[2].address,
+        cidade: res[2].city,
+        bairro: res[2].district,
         quartos: 4,
         camas: 8,
         vagas: 4,
@@ -45,6 +54,9 @@ export class RepublicService{
       {
         id: 3,
         img: '../../assets/img/republica4.jpg',
+        endereco: res[3].address,
+        cidade: res[3].city,
+        bairro: res[3].district,
         quartos: 4,
         camas: 16,
         vagas: 4,
@@ -55,6 +67,9 @@ export class RepublicService{
       {
         id: 4,
         img: '../../assets/img/republica5.jpg',
+        endereco: res[4].address,
+        cidade: res[4].city,
+        bairro: res[4].district,
         quartos: 5,
         camas: 9,
         vagas: 3,
@@ -63,14 +78,6 @@ export class RepublicService{
         descricao: '5 quartos, 4 beliches, confortável, acessível, localizado proximo a estação de trem, ambiente comum aconchegante.',
       },
     ];
-
-    let i = 0;
-    for (const r of this.republicas) {
-      r.endereco = res[i].address;
-      r.bairro = res[i].district;
-      r.cidade = res[i].city;
-      i++;
-    }
   }
 
   getRepublicasArray() {
