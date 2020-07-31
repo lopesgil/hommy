@@ -13,7 +13,8 @@ export class HomePage implements OnInit {
   republicas: Republica[];
 
   constructor(public searchService: SearchService,
-              public republicsService: RepublicService) { }
+              public republicsService: RepublicService,
+              ) { }
 
   ngOnInit() {
     this.allRepublicsGet();

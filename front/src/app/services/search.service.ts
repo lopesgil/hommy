@@ -13,4 +13,8 @@ export class SearchService {
   getRepublics(): Observable<any> {
     return this.http.get(this.apiURL + 'listRepublic');
   }
+
+  getRepublic(id: number): Observable<any> {
+    return this.http.get(this.apiURL + 'showRepublic/' + id);
+  }
 }

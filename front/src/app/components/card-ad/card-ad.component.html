@@ -1,4 +1,5 @@
-<ion-card class="anuncio" color="tertiary" [routerLink]="['/detalhes', republica.id]">
+<ion-card class="anuncio" color="tertiary"
+          (click)="irParaRepublica(republica.id)">
     <ion-img [src]=republica.img></ion-img>
     <ion-card-header>
         <ion-card-subtitle>{{republica.endereco}}</ion-card-subtitle>
